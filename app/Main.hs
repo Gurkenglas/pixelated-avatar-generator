@@ -7,8 +7,7 @@ main :: IO ()
 main = do
   args <- getArgs
   checkForProperArgs args
-  let path = head args
-  let seedString = args !! 1
+  let [path, seedString] = args
   putStrLn $ "Creating avatar at " ++ path
   createAndSaveAvatar path seedString
   putStrLn $ "Successfully created avatar, and saved it to " ++ path
